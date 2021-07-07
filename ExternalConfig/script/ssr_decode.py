@@ -85,7 +85,11 @@ def decode(s):
     
     s = str(s,encoding="utf-8")
     return s
-
+#功能：将不适合作为文件名的字符替换为“-”
+def replace_filename_with_dash(filename):
+    rstr = r"[\/\\\:\*\?\"\<\>\|]"  # '/ \ : * ? " < > |'
+    new_title = re.sub(rstr, "_", filename)  # 替换为下划线
+    return new_title
 #功能：解析ssr并保存在config目录下
 #参数：d为去掉'ssr://'前缀，name为保存的config的名字默认为conf
 def save_as_json(d,port,name='conf'):
@@ -98,7 +102,8 @@ def save_as_json(d,port,name='conf'):
     home = expanduser("~")
     if not os.path.exists(home + surgePath + '/SSRJson'):
         os.makedirs(home + surgePath + '/SSRJson')
-    with open(home + surgePath + '/SSRJson' + '/' + remarks + '.json', 'w') as f:
+    filename=replace_filename_with_dash(remarks)
+    with open(home + surgePath + '/SSRJson' + '/' + filename + '.json', 'w') as f:
         json.dump(data_dict, f)
 
 #从终端输入ssr链接，将解析后的配置保存到目录config下
