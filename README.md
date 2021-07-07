@@ -26,8 +26,8 @@
   #进入项目中脚本文件夹
   cd ExternalConfig/ExternalConfig/script
   #执行如下脚本在指定目录生成配置
-  python3 RSS.py -s `此外为你的SSR订阅地址` -p 端口号
-  python3 v2json.py -s `此外为你的V2RAY订阅地址` -p 端口号
+  python3 RSS.py -s "此外为你的SSR订阅地址" -p "本地监听起始端口号"
+  python3 v2json.py -s "此外为你的V2RAY订阅地址" -p "端口号"
   #示例：
   script git:(master) ✗ python3 RSS.py -s https://www.xxxxxx.com -p 19522 
   script git:(master) ✗ python3 v2json.py -s https://www.xxxxxx.com -p 19829
