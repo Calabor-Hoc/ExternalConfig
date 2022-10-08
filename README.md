@@ -1,7 +1,7 @@
 # ExternalConfig
 
 #### 使用说明
-
+- 假设`RSS.py`位于`~/Documents/Surge/tool/ExternalConfig/ExternalConfig/script/`目录下
 - 项目中使用的python3路径为 `/usr/local/bin/python3`，请自行安装
 
 - 生成配置的路径为`~/Documents/Surge/config`
@@ -21,7 +21,7 @@
 - `v2ray`同理 这里 https://github.com/v2ray/v2ray-core/releases 下载使用
 
 - Python脚本使用
-
+注意: 执行Python脚本前务必将Surge的`Enhanced Mode`关闭, 否则会导致脚本解析ssr节点的ip地址结果有误. Surge的`Enhanced Mode`会拦截所有网络请求而返回一个假的DNS地址.
   ```shell
   #进入项目中脚本文件夹
   cd ExternalConfig/ExternalConfig/script
@@ -32,7 +32,7 @@
   script git:(master) ✗ python3 RSS.py -s https://www.xxxxxx.com -p 19522 
   script git:(master) ✗ python3 v2json.py -s https://www.xxxxxx.com -p 19829
   ```
-
+- 将Python脚本的输出复制粘贴到Surge的`default.conf`文件中的正确位置即可.
 #### 配置参考:
 
 >- 示例：
